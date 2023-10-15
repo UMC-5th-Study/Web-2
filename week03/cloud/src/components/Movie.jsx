@@ -1,4 +1,6 @@
-const Movie = ({ poster_path, title, vote_average }) => {
+import MovieDetail from "./MovieDetail";
+
+const Movie = ({ poster_path, title, vote_average, overview }) => {
   return (
     <div className="movie-box">
       <img
@@ -11,6 +13,8 @@ const Movie = ({ poster_path, title, vote_average }) => {
 
         <span className="average">{vote_average}</span>
       </div>
+
+      <MovieDetail title={title} overview={overview} />
     </div>
   );
 };

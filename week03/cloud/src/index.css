@@ -24,11 +24,13 @@ body {
 }
 
 .movie-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 170px;
   background-color: #54548b;
+  cursor: pointer;
 
   & > img {
     width: 100%;
@@ -53,5 +55,32 @@ body {
     & > .average {
       font-size: 12px;
     }
+  }
+
+  &:hover > .movie-detail {
+    opacity: 1;
+  }
+}
+
+.movie-detail {
+  padding: 20px 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  overflow-y: auto;
+  opacity: 0;
+  transition: 0.2s;
+
+  & > h5 {
+    font-size: 14px;
+  }
+
+  & > p {
+    margin-top: 15px;
+    font-size: 14px;
   }
 }
