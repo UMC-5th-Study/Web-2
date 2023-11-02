@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter</title>
+  </head>
+  <body>
+    <h2 id="number">0</h2>
+    <button id="increase">+1</button>
+    <button id="decrease">-1</button>
+    <script>
+      const num = document.querySelector('#number');
+      const clicki = document.querySelector('#increase');
+      const clickd = document.querySelector('#decrease');
+
+      console.log(number);
+      console.log(increase);
+      console.log(decrease);
+
+      let count = parseInt(num.innerHTML);
+      clicki.onclick = () => {
+        console.log('increase 가 클릭됨');
+        count += 1;
+        num.innerHTML = count;
+      };
+      clickd.onclick = () => {
+        console.log('decrease가 클릭됨');
+        count -= 1;
+        num.innerText = count;
+      };
+    </script>
+  </body>
+</html>

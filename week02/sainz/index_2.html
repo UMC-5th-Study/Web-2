@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+    <style>
+      #modal {
+        width: 600px;
+        height: 250px;
+        background-color: white;
+        /* display: inline-flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        border-radius: 4px;
+      }
+      .wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: darkgray;
+        opacity: 0.9;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+
+      h3,
+      h4 {
+        font-size: 25px;
+        margin-left: 20px;
+      }
+
+      .closeb {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="first">안녕하세요!</h1>
+    <p id="second">내용내용</p>
+    <button id="mbutton">OPEN</button>
+    <div class="wrap" style="display: none">
+      <div id="modal">
+        <!-- <div class="modalbody"> -->
+        <h3 id="mfirst">HELLO</h3>
+        <h4 id="msecond">내용내용</h4>
+        <div class="closeb">
+          <button id="cbutton">CLOSE</button>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <script>
+      const open = document.querySelector('#mbutton');
+      const close = document.querySelector('.closeb');
+      const modal = document.querySelector('#modal');
+      const wrap = document.querySelector('.wrap');
+      // const modalb = document.querySelector('.modalbody');
+      open.onclick = () => {
+        wrap.style.display = 'flex';
+      };
+      close.onclick = () => {
+        wrap.style.display = 'none';
+      };
+    </script>
+  </body>
+</html>

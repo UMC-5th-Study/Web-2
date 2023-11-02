@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+    <style>
+      body {
+        background-image: url(../umc.svg);
+      }
+      #box {
+        width: 700px;
+        height: 500px;
+        background-color: rgb(135, 145, 157);
+        opacity: 0.8;
+        border-radius: 10px;
+        /* z-index: 1; */
+      }
+      #wrap {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      span,
+      input {
+        margin-left: 10px;
+      }
+      h2 {
+        text-align: center;
+        width: 300px;
+        border-bottom: 2px solid white;
+        padding: 5px;
+      }
+      #subbutton {
+        text-align: center;
+        margin-top: 10px;
+      }
+      #bwrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      span {
+        align-items: left;
+        color: white;
+      }
+      div > p {
+        color: red;
+        font-size: 12px;
+        text-align: left;
+        margin-left: 10px;
+        margin-top: 0;
+        margin-bottom: 0px;
+        display: inline;
+      }
+      #IDD,
+      #NIC,
+      #mail,
+      #pwd,#pwdc {
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 4px;
+        /* margin-bottom: 30px; */
+      }
+      #title {
+        display: flex;
+        justify-content: center;
+      }
+      .r{
+        color: greenyellow;
+      }
+      #submit{
+        background-color: rgb(47, 47, 72);
+        margin-top: 15px;
+        width: 140px;
+        height: 40px;
+        border-radius: 10px;
+        color: white
+      }
+      #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      /* z-index: 0; */
+      display: flex;
+      border-radius: 10px;
+      height: 150px;
+      width: 300px;
+      align-items: center;
+      justify-content: center;
+}
+h1, h3{
+  text-align: center;
+}
+h3{
+  font-size: 13px;
+}
+#closeb{
+  display: flex;
+  justify-content: flex-end;
+}
+#std,#std2,#std3, #std4, #std5{
+  color: transparent;
+}
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="box">
+        <div id="modal" style="display: none;" >
+          <div id="wraps">
+            <h1>가입성공! </h1>
+            <h3>UMC챌린저 가입을 축하합니다!!</h3>
+            <div id="closeb">
+              <button>닫기</button>
+            </div>
+          </div>
+        </div>
+        <div id="title">
+          <h2>회원가입</h2>
+        </div>
+        <div id="bwrapper">
+          <div id="wrapper1">
+            <span>이름</span> <br />
+            <input type="text" id="IDD" value="" />
+            <div id="std">aa</div>
+            <div id="wrong" style="display: none">
+              <p>필수입력항목</p>
+            </div>
+            <div id="right" style="display: none;">
+              <p class="r">멋진 이름이네요</p>
+            </div>
+          </div>
+
+          <div id="wrapper2">
+            <span>닉네임</span><br />
+            <input type="text" id="NIC" value="" />
+            <div id="std2">aa</div>
+            <div id="wrong2" style="display: none">
+              <p>닉네임은 2~5글자</p>
+            </div>
+            <div id="right2" style="display: none;">
+              <p class="r">멋진 닉네임이네요</p>
+            </div>
+          </div>
+          <div id="wrapper3">
+            <span>이메일</span><br />
+            <input type="email" id="mail" pattern=".+@ .com" />
+            <div id="std3">aa</div>
+            <div id="wrong3" style="display: none">
+              <p>올바른 메일 형식 아님</p>
+          </div>
+          <div id="right3" style="display: none;">
+            <p class="r">올바른 메일 형식</p>
+          </div>
+        </div>
+        <div id="wrapper4">
+          <span>비밀번호</span><br />
+          <input type="password" id="pwd" />
+          <div id="std4">ss</div>
+          <div id="wrong4" style="display: none">
+            <p>올바른 비밀번호 형식 아님</p>
+        </div>
+        <div id="right4" style="display: none;">
+          <p class="r">올바른 비밀번호 형식</p> 
+        </div>
+      </div>
+      <div id="wrapper5">
+        <span>비밀번호 확인</span><br />
+        <input type="password" id="pwdc" />
+        <div id="std5">aa</div>
+        <div id="wrong5" style="display: none">
+          <p>동일한 비밀번호 아님</p>
+      </div>
+      <div id="right5" style="display: none;">
+        <p class="r">동일한 비밀번호 </p>
+      </div>
+    </div>
+        <div id="subbutton">
+          <input type="button" id="submit" value="가입하기" />
+        </div>
+      </div>
+    </div>
+    <script>
+      let a, b ,c, d, e = false; //
+      //const id = document.querySelector('#IDD');
+      const sub = document.querySelector('#submit');
+      const clo = document.querySelector('#closeb');
+      const stdd = document.querySelector('#std');
+      const stdd2 = document.querySelector('#std2');
+      const stdd3 = document.querySelector('#std3');
+      const stdd4 = document.querySelector('#std4');
+      const stdd5 = document.querySelector('#std5');
+      const input1 = document.getElementById('IDD');
+      const input2 = document.getElementById('NIC');
+      const input3 = document.getElementById('mail');
+      const input4 = document.getElementById('pwd');
+      const input5 = document.getElementById('pwdc');
+      let exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.com+/; // email 유효성 검정 
+      let pwdtext = /^[A-Za-z0-9`\-=\\\[\];',\./~!@#\$%\^&\*\(\)_\+|\{\}:"<>\?]{5,100}$/; // pw 유효성 검정
+      sub.disabled = true;
+      
+      IDD.addEventListener('input', () => {
+        std.style.display = 'none';
+        if (input1.value.length == 0) {          
+          wrong.style.display = 'block';
+          right.style.display = 'none';
+          
+        } else {
+          wrong.style.display = 'none';
+          right.style.display= 'block';
+          
+          e = true;
+        }
+        event.preventDefault();
+        if(a&&b&&c&&d&&e) {
+      sub.disabled = false;
+    }
+      });
+      
+      NIC.addEventListener('input', () => {
+        std2.style.display = 'none';
+        if (input2.value.length < 2 || input2.value.length > 5) {
+          wrong2.style.display = 'block';
+          right2.style.display = 'none';
+          
+        } else {
+          wrong2.style.display = 'none';
+          right2.style.display = 'block';
+          a = true;
+        }
+        if(a&&b&&c&&d&&e) {
+      sub.disabled = false;
+    }
+      });
+      mail.addEventListener('input', () => {
+        std3.style.display = 'none';
+        if (input3.value.length == 0 || exptext.test(input3.value) == false ) {
+          wrong3.style.display = 'block';
+          right3.style.display = 'none';
+        
+        } else {
+          wrong3.style.display = 'none';
+          right3.style.display = 'block';
+          b = true;
+        }
+        if(a&&b&&c&&d&&e) {
+      sub.disabled = false;
+    }
+      });
+      pwd.addEventListener('input', () => {
+        std4.style.display = 'none';
+        if (input4.value.length == 0 || pwdtext.test(input4.value) == false) {
+          wrong4.style.display = 'block';
+          right4.style.display = 'none';
+          
+        } else {
+          wrong4.style.display = 'none';
+          right4.style.display = 'block';
+          c = true;
+        }
+        if(a&&b&&c&&d&&e) {
+      sub.disabled = false;
+    }
+      }); 
+      pwdc.addEventListener('input', () => {
+        std5.style.display = 'none';
+        if (input5.value !== input4.value) {
+          wrong5.style.display = 'block';
+          right5.style.display = 'none';
+          
+        } else {
+          wrong5.style.display = 'none';
+          right5.style.display = 'block';
+          d = true;
+        }
+        if(a&&b&&c&&d&&e) {
+      sub.disabled = false;
+    }
+      }); 
+   
+    sub.onclick=()=>{
+      console.log('clicked');
+        modal.style.display = 'block'
+    };
+    
+    clo.onclick=()=>{
+      modal.style.display = 'none';
+    }
+    </script>
+  </body>
+</html>
+
+<!--a&&b&&c&&d 사용  -6개 다 만족시 disabled = false>
