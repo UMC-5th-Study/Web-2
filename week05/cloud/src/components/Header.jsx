@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import LoginControl from "./LoginControl";
+
 const Header = () => {
   return (
     <header>
@@ -25,6 +27,8 @@ const Header = () => {
             <Link to="/person">인물</Link>
           </li>
         </ul>
+
+        <LoginControl />
       </div>
     </header>
   );

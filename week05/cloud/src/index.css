@@ -59,6 +59,27 @@ header {
   }
 }
 
+.login-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & > button {
+    padding: 4px 16px;
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  & > span {
+    font-size: 14px;
+    color: white;
+  }
+}
+
+/* Movies */
 .movie-box {
   position: relative;
   display: flex;
