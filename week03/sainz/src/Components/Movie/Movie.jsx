@@ -1,7 +1,9 @@
-// import movie from './movieDummy';
+// import movies from './movieDummy';
+
+import MovieD from '../MovieDetail';
 
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w1280/';
-export default function Movie({ title, poster_path, vote_average }) {
+const Movie = ({ title, overview, poster_path, vote_average }) => {
   // console.log(props);
   return (
     <div className="movie-container">
@@ -10,6 +12,8 @@ export default function Movie({ title, poster_path, vote_average }) {
         <h4>{title}</h4>
         <span>{vote_average}</span>
       </div>
+      <MovieD title={title} overview={overview} />
     </div>
   );
-}
+};
+export default Movie;
