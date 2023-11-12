@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Login from './LoginControl';
 
 const Header = () => {
   return (
@@ -13,6 +14,10 @@ const Header = () => {
       <Link to="/Movie">영화</Link>
       <Link to="/TV">TV프로그램</Link>
       <Link to="/person">인물</Link>
+
+      <>
+        <Login />
+      </>
     </header>
   );
 };

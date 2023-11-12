@@ -43,3 +43,17 @@ header a {
   display: flex;
   flex-wrap: wrap;
 }
+.buttons {
+  width: 70px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.adbutton {
+  border-radius: 10px;
+  background-color: white;
+}
+span {
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
