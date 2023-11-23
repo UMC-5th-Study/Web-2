@@ -1,4 +1,4 @@
-import Movie from "../components/Movie";
+import Card from "../components/Card";
 
 import { movies } from "../utils/constants";
 
@@ -6,9 +6,9 @@ const Movies = () => {
   const { results: datas } = movies;
 
   return (
-    <div className="movie-page">
+    <div className="video-page">
       {datas.map((movie) => (
-        <Movie key={movie.id} {...movie} />
+        <Card key={movie.id} {...movie} />
       ))}
     </div>
   );

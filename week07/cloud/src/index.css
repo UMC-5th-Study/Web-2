@@ -23,7 +23,7 @@ body {
   width: 100%;
 }
 
-.movie-page {
+.video-page {
   padding: 20px;
   display: flex;
   align-items: stretch;
@@ -34,7 +34,7 @@ body {
   height: 100%;
 }
 
-.movie-detail-page {
+.video-detail-page {
   padding: 20px;
 
   & > .container {
@@ -166,7 +166,7 @@ header {
 }
 
 /* Movies */
-.movie-box {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -200,12 +200,12 @@ header {
     }
   }
 
-  &:hover > .movie-detail {
+  &:hover > .card-detail {
     opacity: 1;
   }
 }
 
-.movie-detail {
+.card-detail {
   padding: 20px 10px;
   position: absolute;
   left: 0;

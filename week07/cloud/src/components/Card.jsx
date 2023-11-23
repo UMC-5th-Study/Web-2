@@ -1,18 +1,18 @@
 import { useNavigate } from "react-router-dom";
 
-import MovieDetail from "./MovieDetail";
+import CardDetail from "./CardDetail";
 
-const Movie = ({ id, poster_path, title, vote_average, overview }) => {
+const Card = ({ id, poster_path, title, vote_average, overview }) => {
   const navigate = useNavigate();
 
   const onClick = () => {
-    navigate(`/movie/${id}`, {
+    navigate(`/video/${id}`, {
       state: { title, poster_path },
     });
   };
 
   return (
-    <div className="movie-box" onClick={onClick}>
+    <div className="card" onClick={onClick}>
       <img
         src={"https://www.themoviedb.org/t/p/w440_and_h660_face" + poster_path}
         alt="poster"
@@ -24,9 +24,9 @@ const Movie = ({ id, poster_path, title, vote_average, overview }) => {
         <span className="average">{vote_average}</span>
       </div>
 
-      <MovieDetail title={title} overview={overview} />
+      <CardDetail title={title} overview={overview} />
     </div>
   );
 };
 
-export default Movie;
+export default Card;

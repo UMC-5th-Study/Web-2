@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
 
-const MovieDetail = () => {
+const VideoDetail = () => {
   const {
     state: { title, poster_path },
   } = useLocation();
 
   return (
-    <div className="movie-detail-page">
+    <div className="video-detail-page">
       <div className="container">
         <img
           src={
@@ -21,4 +21,4 @@ const MovieDetail = () => {
   );
 };
 
-export default MovieDetail;
+export default VideoDetail;

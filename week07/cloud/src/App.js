@@ -7,10 +7,10 @@ import Header from "./components/Header";
 import Celebrity from "./pages/Celebrity";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import MovieDetail from "./pages/MovieDetail";
 import Movies from "./pages/Movies";
 import NotFound from "./pages/NotFound";
 import TV from "./pages/TV";
+import VideoDetail from "./pages/VideoDetail";
 
 const App = () => {
   return (
@@ -22,8 +22,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/person" element={<Celebrity />} />
         <Route path="/movie" element={<Movies />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/tv" element={<TV />} />
+        <Route path="/video/:id" element={<VideoDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
