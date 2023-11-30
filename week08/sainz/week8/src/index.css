@@ -1,0 +1,12 @@
+.weather-container {
+  margin-top: 50px;
+  display: flex;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+}
+.inform {
+  margin-top: 20px;
+  width: 140px;
+  border: 1px solid black;
+}
