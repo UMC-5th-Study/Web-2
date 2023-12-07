@@ -20,13 +20,14 @@ const App = () => {
     }
 
     try {
-      const { data: loginData } = await axios.post(
-        "http://localhost:8000/user/login",
-        data
-      );
+      const { result } = (
+        await axios.post("http://localhost:8000/user/login", data)
+      ).data;
 
       alert("로그인 성공");
-      console.log(loginData);
+
+      localStorage["id"] = result.userId;
+      localStorage["token"] = result.AccessToken;
     } catch (e) {
       alert(e.response.data.message);
     }
